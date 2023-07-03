@@ -1,28 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "template-mod",
+  "id": "screenshot-to-clipboard",
   "version": "${version}",
 
-  "name": "Template Mod",
-  "description": "I am templet",
+  "name": "Screenshot to Clipboard",
+  "description": "Quick Minecraft mod that saves screenshots you take to the clipboard, though probably somewhat inefficiently.",
   "authors": [
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/Redstoniaa/screenshot-to-clipboard",
+    "sources": "https://github.com/Redstoniaa/screenshot-to-clipboard"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/template/icon.png",
+  "license": "MIT",
+  "icon": "assets/screenshot_to_clipboard/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "template.TemplateMod"
+      "screenshot_to_clipboard.ScreenshotToClipboardMod"
     ]
   },
   "mixins": [
-    "template.mixins.json"
+    "screenshot_to_clipboard.mixins.json"
   ],
 
   "depends": {
