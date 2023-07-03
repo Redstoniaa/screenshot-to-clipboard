@@ -15,10 +15,10 @@
   "license": "MIT",
   "icon": "assets/screenshot_to_clipboard/icon.png",
 
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
-    "main": [
-      "screenshot_to_clipboard.ScreenshotToClipboardMod"
+    "client": [
+      "screenshot_to_clipboard.ScreenshotToClipboardClient"
     ]
   },
   "mixins": [
