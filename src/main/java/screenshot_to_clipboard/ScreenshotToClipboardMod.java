@@ -1,6 +1,5 @@
 package screenshot_to_clipboard;
 
-import net.fabricmc.api.ClientModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import screenshot_to_clipboard.util.ClipboardUtil;
@@ -9,15 +8,13 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-public class ScreenshotToClipboardClient
-		implements ClientModInitializer {
+public class ScreenshotToClipboardMod {
 	public static final String MOD_ID = "screenshot-to-clipboard";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public static File screenshotFile;
 
-	@Override
-	public void onInitializeClient() {
+	public static void onInitialize() {
 		// cause clipboard stuff won't work with headless
 		System.setProperty("java.awt.headless", "false");
 	}

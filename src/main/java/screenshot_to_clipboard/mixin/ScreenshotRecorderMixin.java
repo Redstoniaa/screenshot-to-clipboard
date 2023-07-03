@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import java.io.File;
 import java.util.function.Consumer;
 
-import static screenshot_to_clipboard.ScreenshotToClipboardClient.*;
+import static screenshot_to_clipboard.ScreenshotToClipboardMod.*;
 
 @Mixin(ScreenshotRecorder.class)
 public abstract class ScreenshotRecorderMixin {

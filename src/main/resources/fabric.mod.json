@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Screenshot to Clipboard",
-  "description": "Quick Minecraft mod that saves screenshots you take to the clipboard, though probably somewhat inefficiently.",
+  "description": "Quick Minecraft mod that saves screenshots you take to the clipboard.",
   "authors": [
   ],
   "contact": {
@@ -18,7 +18,7 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "screenshot_to_clipboard.ScreenshotToClipboardClient"
+      "screenshot_to_clipboard.ScreenshotToClipboardMod::onInitialize"
     ]
   },
   "mixins": [
@@ -27,7 +27,6 @@
 
   "depends": {
     "fabricloader": ">=0.14.19",
-    "fabric-api": "*",
     "minecraft": "~1.19.4",
     "java": ">=17"
   }
