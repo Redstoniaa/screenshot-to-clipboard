@@ -16,7 +16,12 @@ public class ClipboardUtil {
         clipboard.setContents(new TransferableImage(img), null);
     }
 
-    private record TransferableImage(Image i) implements Transferable {
+    private static class TransferableImage implements Transferable {
+        private final Image i;
+
+        public TransferableImage(Image img) {
+            i = img;
+        }
 
         @Override
         public Object getTransferData(DataFlavor flavor)
