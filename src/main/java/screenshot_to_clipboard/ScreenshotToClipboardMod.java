@@ -1,5 +1,6 @@
 package screenshot_to_clipboard;
 
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import org.slf4j.Logger;
@@ -34,13 +35,13 @@ public class ScreenshotToClipboardMod {
 			if (!GraphicsEnvironment.isHeadless()) {
 				BufferedImage image = ImageIO.read(screenshotFile);
 				ClipboardUtil.copyToClipboard(image);
-				messageReceiver.accept(Text.literal("and copied to clipboard!").formatted(Formatting.GREEN));
+				messageReceiver.accept(new LiteralText("and copied to clipboard!").formatted(Formatting.GREEN));
 			} else {
-				messageReceiver.accept(Text.literal("Lost my head somewhere, please give it back!").formatted(Formatting.RED));
+				messageReceiver.accept(new LiteralText("Lost my head somewhere, please give it back!").formatted(Formatting.RED));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			messageReceiver.accept(Text.literal("Failed to copy screenshot to clipboard.").formatted(Formatting.RED));
+			messageReceiver.accept(new LiteralText("Failed to copy screenshot to clipboard.").formatted(Formatting.RED));
 		}
 	}
 }

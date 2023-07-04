@@ -19,7 +19,7 @@ import static screenshot_to_clipboard.ScreenshotToClipboardMod.*;
 @Mixin(ScreenshotRecorder.class)
 public abstract class ScreenshotRecorderMixin {
     @Inject(method = "saveScreenshotInner",
-            at = @At(value = "INVOKE", target = "Ljava/util/concurrent/ExecutorService;execute(Ljava/lang/Runnable;)V"),
+            at = @At(value = "INVOKE", target = "Ljava/util/concurrent/Executor;execute(Ljava/lang/Runnable;)V"),
             locals = LocalCapture.CAPTURE_FAILHARD)
     private static void captureAllLocals(File gameDirectory, String fileName, Framebuffer framebuffer, Consumer<Text> messageReceiver, CallbackInfo ci, NativeImage nativeImage, File file, File file2) {
         // file2 represents the File that the screenshot was written to
@@ -28,7 +28,7 @@ public abstract class ScreenshotRecorderMixin {
     }
 
     @ModifyArg(method = "saveScreenshotInner",
-               at = @At(value = "INVOKE", target = "Ljava/util/concurrent/ExecutorService;execute(Ljava/lang/Runnable;)V"))
+               at = @At(value = "INVOKE", target = "Ljava/util/concurrent/Executor;execute(Ljava/lang/Runnable;)V"))
     private static Runnable injectSendToClipboard(Runnable screenshotSaver) {
         return () -> {
             screenshotSaver.run();
